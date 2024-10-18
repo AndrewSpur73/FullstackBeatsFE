@@ -1,11 +1,12 @@
 import PropTypes from 'prop-types';
-import { useAuth } from '@/utils/context/authContext';
-import Loading from '@/components/Loading';
-import SignIn from '@/components/SignIn';
-import NavBar from '@/components/NavBar';
+import { useAuth } from './authContext';
+import Loading from '../../components/Loading';
+import NavBar from '../../components/NavBar';
+import RegisterForm from '../../components/forms/RegisterForm';
+import Signin from '../../components/SignIn';
 
 function ViewDirectorBasedOnUserAuthStatus({ children }) {
-  const { user, userLoading } = useAuth();
+  const { user, userLoading, updateUser } = useAuth();
 
   // if user state is null, then show loader
   if (userLoading) {
@@ -17,16 +18,21 @@ function ViewDirectorBasedOnUserAuthStatus({ children }) {
     return (
       <>
         <NavBar /> {/* NavBar only visible if user is logged in and is in every view */}
+        <RegisterForm updateUser={updateUser} />
         {children}
       </>
     );
   }
 
-  return <SignIn />;
+  return <Signin />;
 }
 
 export default ViewDirectorBasedOnUserAuthStatus;
 
+// ViewDirectorBasedOnUserAuthStatus.propTypes = {
+//   component: PropTypes.func.isRequired,
+//   pageProps: PropTypes.oneOfType([PropTypes.object]).isRequired,
+// };
 ViewDirectorBasedOnUserAuthStatus.propTypes = {
   children: PropTypes.node.isRequired,
 };
