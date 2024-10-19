@@ -55,18 +55,18 @@ const deleteSingleUser = (uid) =>
       .catch(reject);
   });
 
-const updateUser = (uid) =>
-  new Promise((resolve, reject) => {
-    fetch(`${endpoint}/users/${uid}`, {
-      method: 'PATCH',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      // body: JSON.stringify(payload),
-    })
-      .then((response) => response.json())
-      .then((data) => resolve(data))
-      .catch(reject);
-  });
+// const updateUser = (uid) =>
+//   new Promise((resolve, reject) => {
+//     fetch(`${endpoint}/users/${uid}`, {
+//       method: 'PATCH',
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//       // body: JSON.stringify(payload),
+//     })
+//       .then((response) => response.json())
+//       .then((data) => resolve(data))
+//       .catch(reject);
+//   });
 
-export { getUsers, createUser, getSingleUser, deleteSingleUser, updateUser };
+export { getUsers, createUser, getSingleUser, deleteSingleUser };
