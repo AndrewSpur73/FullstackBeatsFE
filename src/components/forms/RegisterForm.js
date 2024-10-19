@@ -2,9 +2,9 @@
 
 import PropTypes from 'prop-types';
 import { useState } from 'react';
-// import { useRouter } from 'next/router';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { useRouter } from 'next/navigation';
 import { useAuth } from '../../utils/context/authContext';
 import { registerUser } from '../../utils/auth';
 
@@ -19,12 +19,12 @@ function RegisterForm() {
     about: '',
   });
 
-  // const router = useRouter();
+  const router = useRouter();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     registerUser(formData).then(() => updateUser(user.fbUser.uid));
-    // router.push('/users');
+    router.push('/');
   };
 
   return (
