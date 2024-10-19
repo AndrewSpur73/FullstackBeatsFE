@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
+import { Navbar } from 'react-bootstrap';
 import { useAuth } from './authContext';
 import Loading from '../../components/Loading';
-import NavBar from '../../components/NavBar';
-import RegisterForm from '../../components/forms/RegisterForm';
 import Signin from '../../components/SignIn';
+import RegisterForm from '../../components/forms/RegisterForm';
 
-function ViewDirectorBasedOnUserAuthStatus({ children }) {
+function ViewDirectorBasedOnUserAuthStatus({ component: Component, pageProps }) {
   const { user, userLoading, updateUser } = useAuth();
 
   // if user state is null, then show loader
@@ -17,9 +17,8 @@ function ViewDirectorBasedOnUserAuthStatus({ children }) {
   if (user) {
     return (
       <>
-        <NavBar /> {/* NavBar only visible if user is logged in and is in every view */}
-        <RegisterForm updateUser={updateUser} />
-        {children}
+        <Navbar /> {/* NavBar only visible if user is logged in and is in every view */}
+        <div className="container">{'valid' in user ? <RegisterForm user={user} updateUser={updateUser} /> : <Component {...pageProps} />}</div>
       </>
     );
   }
@@ -29,10 +28,7 @@ function ViewDirectorBasedOnUserAuthStatus({ children }) {
 
 export default ViewDirectorBasedOnUserAuthStatus;
 
-// ViewDirectorBasedOnUserAuthStatus.propTypes = {
-//   component: PropTypes.func.isRequired,
-//   pageProps: PropTypes.oneOfType([PropTypes.object]).isRequired,
-// };
 ViewDirectorBasedOnUserAuthStatus.propTypes = {
-  children: PropTypes.node.isRequired,
+  component: PropTypes.func.isRequired,
+  pageProps: PropTypes.oneOfType([PropTypes.object]).isRequired,
 };
