@@ -1,7 +1,8 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
+import { clientCredentials } from './client';
 
-const endpoint = 'https://localhost:8000';
+const endpoint = clientCredentials.databaseURL;
 
 const checkUser = (uid) =>
   new Promise((resolve, reject) => {
