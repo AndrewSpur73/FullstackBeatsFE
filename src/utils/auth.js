@@ -20,7 +20,7 @@ const checkUser = (uid) =>
           resolve({});
         } else {
           data = await res.json();
-          console.log('data:', data);
+          // console.log('data:', data);
           resolve(data);
         }
       })

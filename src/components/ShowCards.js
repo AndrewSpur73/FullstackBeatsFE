@@ -1,25 +1,44 @@
 'use client';
 
-import React from 'react';
+import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
-import { Card, Image } from 'react-bootstrap';
-import cardData from '../utils/sample-data/CardData';
+import Card from 'react-bootstrap/Card';
+import ListGroup from 'react-bootstrap/ListGroup';
 
-export default function ShowCards() {
+function ShowCards({ showObj }) {
   return (
-    <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly' }}>
-      {cardData.map((showItem) => (
-        <Card key={showItem.title} style={{ width: '18rem' }}>
-          <Image variant="top" src={showItem.imgUrl} />
-          <Card.Body>
-            <Card.Title>{showItem.title}</Card.Title>
-            <span>Hosting</span>
-            <Card.Text>{showItem.details}</Card.Text>
-            <Button variant="primary">Hosting</Button>
-            <Button variant="primary">Attending</Button>
-          </Card.Body>
-        </Card>
-      ))}
+    <div>
+      {console.log(showObj)}
+      <Card style={{ width: '18rem' }}>
+        <Card.Img variant="top" src={showObj.image} />
+        <Card.Body className="text-center">
+          <Card.Title>{showObj.category.name}</Card.Title>
+          <ListGroup variant="flush">
+            <ListGroup.Item>{showObj.name} </ListGroup.Item>
+            <ListGroup.Item>{showObj.airDate}</ListGroup.Item>
+            <ListGroup.Item>{showObj.description}</ListGroup.Item>
+          </ListGroup>
+          <div className="d-flex justify-content-center mt-2">
+            <Button variant="primary" className="me-2">
+              Detail
+            </Button>
+            <Button variant="success">RSVP</Button>
+          </div>
+        </Card.Body>
+      </Card>
     </div>
   );
 }
+
+ShowCards.propTypes = {
+  showObj: PropTypes.shape({
+    airDate: PropTypes.string,
+    category: PropTypes.shape({
+      name: PropTypes.string,
+    }).isRequired,
+    name: PropTypes.string,
+    description: PropTypes.string,
+    image: PropTypes.string,
+  }).isRequired,
+};
+export default ShowCards;
