@@ -11,9 +11,7 @@ export default function NavBar() {
         <Link passHref href="/">
           <Navbar.Brand>FSBeats</Navbar.Brand>
         </Link>
-        <Link passHref href="/shows">
-          <Navbar.Brand>Browse Shows</Navbar.Brand>
-        </Link>
+
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
