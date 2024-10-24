@@ -11,7 +11,6 @@ export default function BrowseShows() {
 
   useEffect(() => {
     getAllShows().then(setShows);
-    console.warn(shows);
   }, []);
 
   return (
