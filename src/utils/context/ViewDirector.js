@@ -15,7 +15,6 @@ function ViewDirectorBasedOnUserAuthStatus({ children }) {
   useEffect(() => {
     if (user && user.uid) {
       getSingleUser(user.uid).then(setDatabaseUser);
-      console.warn(user.uid, databaseUser);
     }
   }, [user]);
 
