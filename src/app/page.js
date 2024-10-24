@@ -18,9 +18,6 @@ function Home() {
       getSingleUser(user.uid) // Fetch user data using the user's UID
         .then((data) => {
           setUserData(data); // Set the user data fetched from API
-        })
-        .catch((error) => {
-          console.error('Error fetching user data:', error);
         });
     }
   }, [user]);
