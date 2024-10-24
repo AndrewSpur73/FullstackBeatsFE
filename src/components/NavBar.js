@@ -14,6 +14,7 @@ export default function NavBar() {
             <img src="/images/image-removebg-preview (4).png" alt="FSBeats Logo" style={{ height: '40px', width: 'auto' }} />
           </Navbar.Brand>
         </Link>
+
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">

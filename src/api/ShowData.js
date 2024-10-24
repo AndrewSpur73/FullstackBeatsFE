@@ -11,8 +11,16 @@ const getAllShows = () =>
       },
     })
       .then((response) => response.json())
-      .then((data) => resolve(Object.values(data)))
+      .then((data) => resolve(data))
       .catch(reject);
   });
+
+// const getAvailableShows = () => {
+//   fetch(`${endpoint}/shows`)
+//   .then((response) => response.json())
+//   .then((data) => {
+//     data.shows
+//   });
+// }
 
 export default getAllShows;
