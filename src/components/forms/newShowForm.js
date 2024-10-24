@@ -24,7 +24,7 @@
 //   const handleSubmit = (e) => {
 //     e.preventDefault();
 //     if (uid) {
-//       updateShow(formInput).then(() => router.push(`/author/${obj.firebaseKey}`));
+//       updateShow(formInput).then(() => router.push(`/shows/${uid}`));
 //     } else {
 //       const payload = { ...formData, uid: user.uid };
 //       createNewShow(formData).then(({ name }) => {
