@@ -28,6 +28,11 @@ export default function BrowseShows() {
             CREATE NEW SHOW
           </Button>
         </Link>
+        <Link href="/shows/category" passHref>
+          <Button variant="primary" className="me-2">
+            CREATE NEW CATEGORY
+          </Button>
+        </Link>
       </div>
       <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly' }}>
         {shows.map((show) => (
