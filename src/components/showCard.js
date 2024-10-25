@@ -11,7 +11,7 @@ function ShowCards({ showObj }) {
       <Card style={{ width: '18rem' }}>
         <Card.Img variant="top" src={showObj.image} />
         <Card.Body className="text-center">
-          <Card.Title>{showObj.category.name}</Card.Title>
+          <Card.Title>{showObj.name}</Card.Title>
           <ListGroup variant="flush">
             <ListGroup.Item>{showObj.name} </ListGroup.Item>
             <ListGroup.Item>{showObj.airDate}</ListGroup.Item>

@@ -8,7 +8,6 @@ import ListGroup from 'react-bootstrap/ListGroup';
 function ShowCards({ showObj }) {
   return (
     <div>
-      {console.log(showObj)}
       <Card style={{ width: '18rem' }}>
         <Card.Img variant="top" src={showObj.image} />
         <Card.Body className="text-center">
