@@ -1,5 +1,10 @@
 import React from 'react';
+import NewCategoryForm from '../../../components/forms/NewCategoryForm';
 
-export default function CrateCategory() {
-  return <div>Congratulations, you have clicked the CREATE CATEGORY page!</div>;
+export default function CreateNewCategory() {
+  return (
+    <div>
+      <NewCategoryForm />
+    </div>
+  );
 }
