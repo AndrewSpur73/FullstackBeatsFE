@@ -20,7 +20,7 @@ const getAllShows = () =>
 const createNewShow = (payload) =>
   new Promise((resolve, reject) => {
     fetch(`${endpoint}/shows`, {
-      method: 'GET',
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
