@@ -5,7 +5,6 @@ import { Button } from 'react-bootstrap';
 import Link from 'next/link';
 import { getAllShows } from '../../api/ShowData';
 import ShowCards from '../../components/showCard';
-// import NewShowForm from '../../components/forms/newShowForm';
 
 export default function BrowseShows() {
   const [shows, setShows] = useState([]);
@@ -28,7 +27,7 @@ export default function BrowseShows() {
             CREATE NEW SHOW
           </Button>
         </Link>
-        <Link href="/shows/category" passHref>
+        <Link href="/categories/new" passHref>
           <Button variant="primary" className="me-2">
             CREATE NEW CATEGORY
           </Button>

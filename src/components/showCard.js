@@ -36,7 +36,7 @@ function ShowCards({ showObj }) {
               <span>
                 {crudAction ? (
                   <>
-                    <Link href="/shows/edit" passHref>
+                    <Link href={`/shows/edit/${showObj.id}`} passHref>
                       <Button variant="primary" className="me-2">
                         EDIT SHOW
                       </Button>
@@ -68,6 +68,7 @@ function ShowCards({ showObj }) {
 ShowCards.propTypes = {
   showObj: PropTypes.shape({
     airDate: PropTypes.string,
+    id: PropTypes.number,
     category: PropTypes.shape({
       name: PropTypes.string,
     }).isRequired,
