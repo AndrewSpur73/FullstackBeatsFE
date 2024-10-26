@@ -34,8 +34,8 @@ const createNewShow = (payload) =>
 // UPDATE SHOW CALL
 const updateShow = (payload) =>
   new Promise((resolve, reject) => {
-    fetch(`${endpoint}/books/${payload.id}.json`, {
-      method: 'PATCH',
+    fetch(`${endpoint}/shows/${payload.id}`, {
+      method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
       },
@@ -46,4 +46,18 @@ const updateShow = (payload) =>
       .catch(reject);
   });
 
-export { getAllShows, createNewShow, updateShow };
+// GET SINGLE SHOW CALL
+const getSingleShow = (id) =>
+  new Promise((resolve, reject) => {
+    fetch(`${endpoint}/shows/${id}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => resolve(data))
+      .catch(reject);
+  });
+
+export { getAllShows, createNewShow, updateShow, getSingleShow };

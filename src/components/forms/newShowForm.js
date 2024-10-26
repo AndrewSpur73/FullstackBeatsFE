@@ -19,18 +19,19 @@ const initialState = {
   categoryId: 0,
 };
 
-function NewShowForm() {
+function NewShowForm({ newShowObj }) {
   const [categories, setCategories] = useState([]);
   const [formData, setFormData] = useState({ ...initialState });
   const { user } = useAuth();
-  const newShowObj = initialState;
 
   const router = useRouter();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (newShowObj.id) {
-      updateShow(formData).then(() => router.push(`/shows/${newShowObj.id}`));
+    // const formData = { ...formData, hostId: user.id };
+    if (newShowObj) {
+      console.warn('formInputs', formData);
+      updateShow(formData).then(() => router.push(`/shows/`));
     } else {
       const payload = { ...formData, hostId: user.id };
       createNewShow(payload).then(() => router.push('/shows'));
@@ -47,33 +48,34 @@ function NewShowForm() {
 
   useEffect(() => {
     getShowCategories().then(setCategories);
-  }, []);
+    if (newShowObj) setFormData({ ...newShowObj });
+  }, [newShowObj]);
 
   return (
     <Form onSubmit={handleSubmit}>
       <Form.Group className="mb-3" controlId="formBasicImage">
         <Form.Label>Show Image</Form.Label>
-        <Form.Control type="url" name="image" required placeholder="Enter an image URL" onChange={handleChange} />
+        <Form.Control type="url" name="image" value={formData.image || ''} required placeholder="Enter an image URL" onChange={handleChange} />
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicUserName">
         <Form.Label>Show Name</Form.Label>
-        <Form.Control type="text" name="name" required placeholder="Enter Show Name" onChange={handleChange} />
+        <Form.Control type="text" name="name" value={formData.name || ''} required placeholder="Enter Show Name" onChange={handleChange} />
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Show Air Date</Form.Label>
-        <Form.Control type="date" name="airDate" required placeholder="Enter Show Air Date" onChange={handleChange} />
+        <Form.Control type="date" name="airDate" value={formData.airDate || ''} required placeholder="Enter Show Air Date" onChange={handleChange} />
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicAbout">
         <Form.Label>Show Description</Form.Label>
-        <Form.Control type="text" name="description" required placeholder="Enter Show Description" onChange={handleChange} />
+        <Form.Control type="text" name="description" value={formData.description || ''} required placeholder="Enter Show Description" onChange={handleChange} />
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicAbout">
         <Form.Label>Show Category</Form.Label>
-        <Form.Select type="text" name="categoryId" required placeholder="Select Show Category" onChange={handleChange}>
+        <Form.Select type="number" name="categoryId" value={formData.categoryId || ''} required placeholder="Select Show Category" onChange={handleChange}>
           <option value="">Select Category</option>
           {categories.map((category) => (
             <option key={category.id} value={category.id}>
@@ -93,6 +95,13 @@ function NewShowForm() {
 NewShowForm.propTypes = {
   newShowObj: PropTypes.shape({
     id: PropTypes.number,
+    name: PropTypes.string,
+    description: PropTypes.string,
+    airDate: PropTypes.string,
+    categories: PropTypes.shape({
+      id: PropTypes.number,
+      name: PropTypes.string,
+    }),
   }),
 };
 
