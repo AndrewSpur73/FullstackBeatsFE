@@ -21,7 +21,7 @@ function ShowCards({ showObj }) {
 
   return (
     <div>
-      <Card style={{ width: '18rem' }}>
+      <Card style={{ height: '30rem', width: '18rem', margin: '10px' }}>
         <Card.Img variant="top" src={showObj.image} />
         <Card.Body className="text-center">
           <Card.Title>{showObj.name}</Card.Title>
