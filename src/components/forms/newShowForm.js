@@ -85,7 +85,7 @@ function NewShowForm({ newShowObj }) {
         </Form.Select>
       </Form.Group>
 
-      <Button variant="danger" type="submit">
+      <Button type="button" size="lg" className="copy-btn" variant="outline-warning">
         Submit
       </Button>
     </Form>

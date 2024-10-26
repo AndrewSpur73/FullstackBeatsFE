@@ -1,4 +1,25 @@
 body {
   background: rgb(40, 23, 65);
   color: white;
+  
+}
+
+.card {
+  background-color: rgb(247, 157, 17);
+  border: 2px solid rgb(251, 71, 154);
+  width: 18rem; 
+  height: 30rem; 
+  margin: 1rem; /* Add margin to create space around the card */
+  
+}
+
+.cardImage {
+  height: 12rem; 
+  object-fit: cover; 
+  width: 100%; /* Ensure the image takes the full width of the card */
+  flex-shrink: 0; /* Prevent the image from shrinking */
+}
+
+.copy-btn {
+  margin: 1rem; /* Add margin around the button */
 }
