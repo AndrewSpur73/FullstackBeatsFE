@@ -31,7 +31,7 @@ function NewShowForm({ newShowObj }) {
     // const formData = { ...formData, hostId: user.id };
     if (newShowObj) {
       console.warn('formInputs', formData);
-      updateShow(formData).then(() => router.push(`/shows/${newShowObj.id}`));
+      updateShow(formData).then(() => router.push(`/shows/`));
     } else {
       const payload = { ...formData, hostId: user.id };
       createNewShow(payload).then(() => router.push('/shows'));
