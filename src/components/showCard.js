@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Link from 'next/link';
 import ListGroup from 'react-bootstrap/ListGroup';
+import styles from '../styles/globals.css';
 
 function ShowCards({ showObj }) {
   const [crudAction, setCrudAction] = useState(false);
@@ -21,29 +22,28 @@ function ShowCards({ showObj }) {
 
   return (
     <div>
-      <Card style={{ height: '30rem', width: '18rem', margin: '10px' }}>
-        <Card.Img variant="top" src={showObj.image} />
+      <Card className={styles.card}>
+        <Card.Img variant="top" className="cardImage" src={showObj.image} />
         <Card.Body className="text-center">
           <Card.Title>{showObj.name}</Card.Title>
           <ListGroup variant="flush">
-            <ListGroup.Item>{showObj.name} </ListGroup.Item>
-            <ListGroup.Item>{showObj.airDate}</ListGroup.Item>
-            <ListGroup.Item>{showObj.description}</ListGroup.Item>
+            <ListGroup.Item style={{ backgroundColor: 'rgb(247, 157, 17)' }}>{showObj.airDate}</ListGroup.Item>
+            <ListGroup.Item style={{ backgroundColor: 'rgb(247, 157, 17)' }}>{showObj.description}</ListGroup.Item>
           </ListGroup>
           <div className="d-flex justify-content-center mt-2">
-            <Button variant="primary" className="me-2" onClick={toggleCrudAction}>
+            <Button variant="outline-dark" className="me-2" onClick={toggleCrudAction}>
               Detail
               <span>
                 {crudAction ? (
                   <>
                     <Link href={`/shows/edit/${showObj.id}`} passHref>
-                      <Button variant="primary" className="me-2">
+                      <Button variant="outline-light" className="me-2">
                         EDIT SHOW
                       </Button>
                     </Link>
 
                     <Link href="/shows/delete" passHref>
-                      <Button variant="primary" className="me-2">
+                      <Button variant="outline-light" className="me-2">
                         DELETE SHOW
                       </Button>
                     </Link>
@@ -54,7 +54,7 @@ function ShowCards({ showObj }) {
               </span>
             </Button>
 
-            <Button variant="success" onClick={toggleselectRsvp}>
+            <Button variant="outline-light" onClick={toggleselectRsvp}>
               RSVP
               <span>{selectRsvp ? ' 💙' : ' 🤍'}</span>
             </Button>

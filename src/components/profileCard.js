@@ -9,7 +9,9 @@ function ProfileCard({ userData }) {
       <Card
         style={{
           width: '100%',
+          height: '100%',
           maxWidth: '400px',
+          maxHeight: '800',
           textAlign: 'center',
           backgroundColor: 'rgb(247, 157, 17)',
           border: '2px solid rgb(251, 71, 154)',
@@ -17,7 +19,7 @@ function ProfileCard({ userData }) {
       >
         <Card.Body>
           <div className="d-flex justify-content-center">
-            <Card.Img src={userData.image} alt={userData.name} roundedCircle style={{ width: '120px', height: '120px', objectFit: 'cover', marginBottom: '15px' }} />
+            <Card.Img src={userData.image} alt={userData.name} roundedCircle style={{ width: '220px', height: '220px', objectFit: 'cover', marginBottom: '15px' }} />
           </div>
           <Card.Title>@{userData.userName}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">{userData.email}</Card.Subtitle>

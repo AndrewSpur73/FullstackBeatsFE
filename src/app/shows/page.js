@@ -28,7 +28,7 @@ export default function BrowseShows() {
           </Button>
         </Link>
         <Link href="/categories/new" passHref>
-          <Button variant="primary" className="me-2">
+          <Button type="button" size="lg" className="copy-btn" variant="outline-warning">
             CREATE NEW CATEGORY
           </Button>
         </Link>
