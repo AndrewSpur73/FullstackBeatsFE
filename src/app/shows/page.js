@@ -24,7 +24,7 @@ export default function BrowseShows() {
     <>
       <div className="d-flex justify-content-center mt-2">
         <Link href="/shows/new" passHref>
-          <Button variant="primary" className="me-2">
+          <Button type="button" size="lg" className="copy-btn" variant="outline-warning">
             CREATE NEW SHOW
           </Button>
         </Link>
