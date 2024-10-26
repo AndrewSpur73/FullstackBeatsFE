@@ -7,7 +7,6 @@ function Signin() {
     <div
       className="d-flex flex-column justify-content-center align-items-center"
       style={{
-        backgroundColor: 'rgb(40, 23, 65)',
         height: '100vh',
         margin: 0,
       }}
