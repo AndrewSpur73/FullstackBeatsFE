@@ -7,19 +7,18 @@ import Col from 'react-bootstrap/Col';
 import { useAuth } from '../utils/context/authContext';
 import { getSingleUser } from '../api/userData';
 import ProfileCard from '../components/profileCard';
-import WatchCard from '../components/watchCard'; // Import WatchCard
-import HostCard from '../components/hostCard'; // Import HostCard
+import HostCard from '../components/hostCard';
+import WatchCard from '../components/watchCard';
 
 function Home() {
-  const { user } = useAuth(); // Get the current authenticated user
+  const { user } = useAuth();
   const [userData, setUserData] = useState(null);
 
   useEffect(() => {
     if (user?.uid) {
-      getSingleUser(user.uid) // Fetch user data using the user's UID
-        .then((data) => {
-          setUserData(data); // Set the user data fetched from API
-        });
+      getSingleUser(user.uid).then((data) => {
+        setUserData(data);
+      });
     }
   }, [user]);
 
@@ -45,3 +44,4 @@ function Home() {
 }
 
 export default Home;
+// test

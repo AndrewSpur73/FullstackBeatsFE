@@ -8,14 +8,12 @@ export default function NavBar() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        {/* Logo on the far left */}
         <Link passHref href="/">
           <Navbar.Brand>
             <img src="/images/image-removebg-preview (4).png" alt="FSBeats Logo" style={{ height: '40px', width: 'auto' }} />
           </Navbar.Brand>
         </Link>
 
-        {/* Search Bar in the center */}
         <Form className="d-flex mx-auto" style={{ width: '50%' }}>
           <FormControl type="search" placeholder="Search" className="me-2" aria-label="Search" />
           <Button variant="outline-light">Search</Button>
@@ -24,7 +22,6 @@ export default function NavBar() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto">
-            {/* Dropdown menu on the far right */}
             <Dropdown align="end">
               <Dropdown.Toggle variant="secondary" id="dropdown-basic">
                 Menu
@@ -42,4 +39,4 @@ export default function NavBar() {
       </Container>
     </Navbar>
   );
-}
+} // test
