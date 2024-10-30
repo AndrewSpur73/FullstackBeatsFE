@@ -60,4 +60,18 @@ const getSingleShow = (id) =>
       .catch(reject);
   });
 
-export { getAllShows, createNewShow, updateShow, getSingleShow };
+// DELETE SINGLE SHOW CALL
+const deleteSingleShow = (id) =>
+  new Promise((resolve, reject) => {
+    fetch(`${endpoint}/shows/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => resolve(data))
+      .catch(reject);
+  });
+
+export { getAllShows, createNewShow, updateShow, getSingleShow, deleteSingleShow };
