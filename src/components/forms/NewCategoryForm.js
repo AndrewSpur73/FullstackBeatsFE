@@ -9,7 +9,7 @@ import { createCategory } from '../../api/CategoryData';
 import { useAuth } from '../../utils/context/authContext';
 
 const initialState = {
-  id: 0,
+  categoryId: 0,
   name: '',
 };
 
@@ -22,9 +22,9 @@ function NewCategoryForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const payload = { ...formData, id: user.id };
+    const payload = { ...formData, categoryId: user.id };
     console.log({ payload });
-    createCategory(payload).then(() => router.push('/categories'));
+    createCategory(payload).then(() => router.push('/shows'));
   };
 
   const handleChange = (e) => {
@@ -51,7 +51,7 @@ function NewCategoryForm() {
 
 NewCategoryForm.propTypes = {
   categoryObj: PropTypes.shape({
-    id: PropTypes.number,
+    categoryId: PropTypes.number,
   }),
 };
 

@@ -30,7 +30,6 @@ function NewShowForm({ newShowObj }) {
     e.preventDefault();
     // const formData = { ...formData, hostId: user.id };
     if (newShowObj) {
-      console.warn('formInputs', formData);
       updateShow(formData).then(() => router.push(`/shows/`));
     } else {
       const payload = { ...formData, hostId: user.id };
