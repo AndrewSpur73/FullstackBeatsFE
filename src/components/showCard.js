@@ -1,12 +1,14 @@
 'use client';
 
 import PropTypes from 'prop-types';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Link from 'next/link';
 import ListGroup from 'react-bootstrap/ListGroup';
+
 import styles from '../styles/globals.css';
+import { deleteSingleShow, getAllShows } from '../api/ShowData';
 
 function ShowCards({ showObj }) {
   const [crudAction, setCrudAction] = useState(false);
@@ -19,6 +21,17 @@ function ShowCards({ showObj }) {
   const toggleselectRsvp = () => {
     setSelectRsvp(!selectRsvp);
   };
+
+  const handleChange = () => {
+    if (window.confirm(`Delete ${showObj.id}`)) {
+      deleteSingleShow(showObj.id).then(() => getAllShows());
+    }
+    window.location.reload();
+  };
+
+  useEffect(() => {
+    getAllShows();
+  }, []);
 
   return (
     <div>
@@ -33,26 +46,28 @@ function ShowCards({ showObj }) {
           <div className="d-flex justify-content-center mt-2">
             <Button variant="outline-dark" className="me-2" onClick={toggleCrudAction}>
               Detail
-              <span>
-                {crudAction ? (
-                  <>
+            </Button>
+            <span>
+              {crudAction ? (
+                <>
+                  <div>
                     <Link href={`/shows/edit/${showObj.id}`} passHref>
                       <Button variant="outline-light" className="me-2">
                         EDIT SHOW
                       </Button>
                     </Link>
+                  </div>
 
-                    <Link href="/shows/delete" passHref>
-                      <Button variant="outline-light" className="me-2">
-                        DELETE SHOW
-                      </Button>
-                    </Link>
-                  </>
-                ) : (
-                  ''
-                )}
-              </span>
-            </Button>
+                  <div>
+                    <Button variant="outline-light" className="me-2" onClick={handleChange}>
+                      DELETE SHOW
+                    </Button>
+                  </div>
+                </>
+              ) : (
+                ''
+              )}
+            </span>
 
             <Button variant="outline-light" onClick={toggleselectRsvp}>
               RSVP
