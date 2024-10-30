@@ -61,7 +61,7 @@ function NewCategoryForm() {
         <Form.Control type="text" name="description" required placeholder="Enter Show Description" onChange={handleChange} />
       </Form.Group>
 
-      <Button type="button" size="lg" className="copy-btn" variant="outline-warning">
+      <Button type="submit" size="lg" className="copy-btn" variant="outline-warning">
         Submit
       </Button>
     </Form>
