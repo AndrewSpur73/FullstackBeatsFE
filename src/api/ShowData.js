@@ -59,6 +59,21 @@ const getSingleShow = (id) =>
       .then((data) => resolve(data))
       .catch(reject);
   });
+
+// DELETE SINGLE SHOW CALL
+const deleteSingleShow = (id) =>
+  new Promise((resolve, reject) => {
+    fetch(`${endpoint}/shows/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => resolve(data))
+      .catch(reject);
+  });
+
 // call used for host shows
 const getUserHostedShows = (HostId) =>
   new Promise((resolve, reject) => {
@@ -72,4 +87,5 @@ const getUserHostedShows = (HostId) =>
       .then((data) => resolve(data))
       .catch(reject);
   });
-export { getAllShows, createNewShow, updateShow, getSingleShow, getUserHostedShows };
+
+export { getAllShows, createNewShow, updateShow, getSingleShow, deleteSingleShow, getUserHostedShows };

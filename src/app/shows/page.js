@@ -12,7 +12,6 @@ export default function BrowseShows() {
   const getshows = async () => {
     const data = await getAllShows();
     setShows(data || []);
-    console.log(data);
   };
 
   useEffect(() => {
