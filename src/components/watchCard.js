@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
 import { getAllShows } from '../api/ShowData';
 
-function ShowsList() {
+function WatchCard() {
   const [shows, setShows] = useState([]);
 
   useEffect(() => {
@@ -30,4 +30,5 @@ function ShowsList() {
   );
 }
 
-export default ShowsList;
+export default WatchCard;
+// test
