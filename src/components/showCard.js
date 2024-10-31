@@ -8,7 +8,6 @@ import Link from 'next/link';
 import ListGroup from 'react-bootstrap/ListGroup';
 
 import styles from '../styles/globals.css';
-import { deleteSingleShow, getAllShows } from '../api/ShowData';
 
 function ShowCards({ showObj }) {
   const [crudAction, setCrudAction] = useState(false);
@@ -20,13 +19,6 @@ function ShowCards({ showObj }) {
 
   const toggleselectRsvp = () => {
     setSelectRsvp(!selectRsvp);
-  };
-
-  const deleteThisShow = () => {
-    if (window.confirm(`Delete ${showObj.id}`)) {
-      deleteSingleShow(showObj.id).then(() => getAllShows());
-    }
-    window.location.reload();
   };
 
   return (
@@ -45,21 +37,13 @@ function ShowCards({ showObj }) {
             </Button>
             <span>
               {crudAction ? (
-                <>
-                  <div>
-                    <Link href={`/shows/edit/${showObj.id}`} passHref>
-                      <Button variant="outline-light" className="me-2">
-                        EDIT SHOW
-                      </Button>
-                    </Link>
-                  </div>
-
-                  <div>
-                    <Button variant="outline-light" className="me-2" onClick={deleteThisShow}>
-                      DELETE SHOW
+                <div>
+                  <Link href={`/shows/edit/${showObj.id}`} passHref>
+                    <Button variant="outline-light" className="me-2">
+                      EDIT SHOW
                     </Button>
-                  </div>
-                </>
+                  </Link>
+                </div>
               ) : (
                 ''
               )}
