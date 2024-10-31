@@ -16,14 +16,12 @@ const initialState = {
 function NewCategoryForm() {
   const [formData, setFormData] = useState({ ...initialState });
   const { user } = useAuth();
-  // const categoryObj = initialState;
 
   const router = useRouter();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const payload = { ...formData, categoryId: user.id };
-    console.log({ payload });
     createCategory(payload).then(() => router.push('/shows'));
   };
 

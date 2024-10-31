@@ -1,12 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
+import { Button } from 'react-bootstrap';
+import Link from 'next/link';
 import { useAuth } from '../utils/context/authContext';
-import { getUserHostedShows } from '../api/ShowData'; // Import the new function
+import { getUserHostedShows, deleteSingleShow } from '../api/ShowData'; // Import the new function
 
 function HostCard() {
   const { user } = useAuth();
   const [hostedShows, setHostedShows] = useState([]);
+
+  const handleDelete = (showObj) => {
+    if (window.confirm(`Delete ${showObj.id}`)) {
+      deleteSingleShow(showObj.id).then(() =>
+        getUserHostedShows(user.id)
+          .then((data) => setHostedShows(data))
+          .catch((error) => console.error('Error fetching shows:', error)),
+      );
+    }
+    // window.location.reload();
+  };
 
   useEffect(() => {
     if (user.id) {
@@ -24,9 +37,23 @@ function HostCard() {
           {hostedShows.length > 0 ? (
             <ul style={{ paddingLeft: '20px' }}>
               {hostedShows.map((show) => (
-                <li key={show.id} style={{ listStyleType: 'disc', marginBottom: '8px' }}>
-                  {show.name}
-                </li>
+                <>
+                  <li key={show.id} style={{ listStyleType: 'disc', marginBottom: '8px' }}>
+                    {show.name}
+                  </li>
+                  <div>
+                    <Button variant="outline-light" className="me-2" onClick={() => handleDelete(show)}>
+                      DELETE SHOW
+                    </Button>
+                  </div>
+                  <div>
+                    <Link href={`/shows/edit/${show.id}`} passHref>
+                      <Button variant="outline-light" className="me-2">
+                        EDIT SHOW
+                      </Button>
+                    </Link>
+                  </div>
+                </>
               ))}
             </ul>
           ) : (
