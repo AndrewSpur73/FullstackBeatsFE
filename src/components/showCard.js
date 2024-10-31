@@ -1,19 +1,27 @@
 'use client';
 
 import PropTypes from 'prop-types';
-import { useState } from 'react';
+// import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
-
 import styles from '../styles/globals.css';
+import { useAuth } from '../utils/context/authContext';
+import { createReservation } from '../api/ShowData';
 
 function ShowCards({ showObj }) {
-  const [selectRsvp, setSelectRsvp] = useState(false);
+  const { user } = useAuth();
+  // const [selectRsvp, setSelectRsvp] = useState(false);
 
-  const toggleselectRsvp = () => {
-    setSelectRsvp(!selectRsvp);
+  const RSVP = (showId) => {
+    const userId = user.id;
+    createReservation(showId, userId);
+    console.warn(showId, userId);
   };
+
+  // const toggleselectRsvp = () => {
+  //   setSelectRsvp(!selectRsvp);
+  // };
 
   return (
     <div>
@@ -29,9 +37,8 @@ function ShowCards({ showObj }) {
             <Button variant="outline-dark" className="me-2">
               Detail
             </Button>
-            <Button variant="outline-light" onClick={toggleselectRsvp}>
+            <Button variant="outline-light" onClick={() => RSVP(showObj.id)}>
               RSVP
-              <span>{selectRsvp ? ' 💙' : ' 🤍'}</span>
             </Button>
           </div>
         </Card.Body>
