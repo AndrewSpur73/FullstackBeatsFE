@@ -1,7 +1,7 @@
 'use client';
 
 import PropTypes from 'prop-types';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Link from 'next/link';
@@ -22,16 +22,12 @@ function ShowCards({ showObj }) {
     setSelectRsvp(!selectRsvp);
   };
 
-  const handleChange = () => {
+  const deleteThisShow = () => {
     if (window.confirm(`Delete ${showObj.id}`)) {
       deleteSingleShow(showObj.id).then(() => getAllShows());
     }
     window.location.reload();
   };
-
-  useEffect(() => {
-    getAllShows();
-  }, []);
 
   return (
     <div>
@@ -59,7 +55,7 @@ function ShowCards({ showObj }) {
                   </div>
 
                   <div>
-                    <Button variant="outline-light" className="me-2" onClick={handleChange}>
+                    <Button variant="outline-light" className="me-2" onClick={deleteThisShow}>
                       DELETE SHOW
                     </Button>
                   </div>
