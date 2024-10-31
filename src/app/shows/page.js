@@ -8,11 +8,18 @@ import ShowCards from '../../components/showCard';
 
 export default function BrowseShows() {
   const [shows, setShows] = useState([]);
+  const [searchItem, setSearchItem] = useState('');
 
   const getshows = async () => {
     const data = await getAllShows();
     setShows(data || []);
   };
+
+  function handleChange(e) {
+    setSearchItem(e.target.value);
+  }
+
+  const searchResults = shows.filter((show) => JSON.stringify(show).toLocaleLowerCase().includes(searchItem.toLocaleLowerCase()));
 
   useEffect(() => {
     getshows();
@@ -20,6 +27,9 @@ export default function BrowseShows() {
 
   return (
     <>
+      <div className="search-bar-container">
+        <input style={{ width: '600px', display: 'block', margin: '0 auto' }} type="search" placeholder="Search for shows" onChange={handleChange} className="search-input" />
+      </div>
       <div className="d-flex justify-content-center mt-2">
         <Link href="/shows/new" passHref>
           <Button type="button" size="lg" className="copy-btn" variant="outline-warning">
@@ -33,8 +43,8 @@ export default function BrowseShows() {
         </Link>
       </div>
       <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly' }}>
-        {shows.map((show) => (
-          <ShowCards key={show.id} showObj={show} />
+        {searchResults.map((show) => (
+          <ShowCards key={show.id} showObj={show} onUpdate={getshows} />
         ))}
       </div>
     </>
