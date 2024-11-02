@@ -4,6 +4,9 @@ import PropTypes from 'prop-types';
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '../../utils/context/authContext';
 import { registerUser } from '../../utils/auth';
@@ -28,27 +31,33 @@ function RegisterForm() {
   };
 
   return (
-    <Form onSubmit={handleSubmit}>
-      <Form.Group className="mb-3" controlId="formBasicUserName">
-        <Form.Label>Username</Form.Label>
-        <Form.Control type="text" name="userName" required placeholder="Enter A Username" onChange={({ target }) => setFormData((prev) => ({ ...prev, [target.name]: target.value }))} />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Email</Form.Label>
-        <Form.Control type="email" name="email" required placeholder="Enter your Email" onChange={({ target }) => setFormData((prev) => ({ ...prev, [target.name]: target.value }))} />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicAbout">
-        <Form.Label>Bio</Form.Label>
-        <Form.Control type="text" name="about" required placeholder="Enter a Bio" onChange={({ target }) => setFormData((prev) => ({ ...prev, [target.name]: target.value }))} />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicImage">
-        <Form.Label>Profile Image</Form.Label>
-        <Form.Control type="url" name="image" required placeholder="Enter an image URL" onChange={({ target }) => setFormData((prev) => ({ ...prev, [target.name]: target.value }))} />
-      </Form.Group>
-      <Button variant="danger" type="submit">
-        Submit
-      </Button>
-    </Form>
+    <Container fluid className="d-flex vh-100 justify-content-center align-items-center">
+      <Row className="w-100 justify-content-center">
+        <Col xs={12} md={6} lg={4} className="fixed-width">
+          <Form onSubmit={handleSubmit}>
+            <Form.Group className="mb-3" controlId="formBasicUserName">
+              <Form.Label>Username</Form.Label>
+              <Form.Control type="text" name="userName" required placeholder="Enter A Username" onChange={({ target }) => setFormData((prev) => ({ ...prev, [target.name]: target.value }))} />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>Email</Form.Label>
+              <Form.Control type="email" name="email" required placeholder="Enter your Email" onChange={({ target }) => setFormData((prev) => ({ ...prev, [target.name]: target.value }))} />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicAbout">
+              <Form.Label>Bio</Form.Label>
+              <Form.Control type="text" name="about" required placeholder="Enter a Bio" onChange={({ target }) => setFormData((prev) => ({ ...prev, [target.name]: target.value }))} />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicImage">
+              <Form.Label>Profile Image</Form.Label>
+              <Form.Control type="url" name="image" required placeholder="Enter an image URL" onChange={({ target }) => setFormData((prev) => ({ ...prev, [target.name]: target.value }))} />
+            </Form.Group>
+            <Button type="submit" size="lg" className="copy-btn" variant="outline-warning">
+              Submit
+            </Button>
+          </Form>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 
