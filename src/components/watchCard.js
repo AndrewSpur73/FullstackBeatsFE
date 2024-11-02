@@ -34,14 +34,17 @@ function WatchCard() {
       <Card style={{ width: '100%', maxWidth: '600px', backgroundColor: 'rgb(247, 157, 17)', border: '2px solid rgb(251, 71, 154)' }}>
         <Card.Body>
           <Card.Title>Shows To Watch</Card.Title>
-          <ul style={{ paddingLeft: '20px' }}>
+          <ul style={{ paddingLeft: '0', listStyleType: 'none' }}>
             {shows.map((show) => (
-              <li key={show.id} style={{ listStyleType: 'disc', marginBottom: '8px' }}>
-                {show.name}
-                <Button variant="outline-light" className="me-2" onClick={() => unRSVP(show)}>
-                  {' '}
-                  unRSVP{' '}
-                </Button>
+              <li key={show.id} style={{ marginBottom: '8px', display: 'flex', justifyContent: 'center' }}>
+                <Card style={{ backgroundColor: 'rgb(247, 157, 17)', border: '2px solid rgb(251, 71, 154)', height: '100%', width: '90%' }}>
+                  <Card.Body style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '8px' }}>
+                    <span style={{ flexGrow: 1 }}>{show.name}</span>
+                    <Button variant="outline-danger" onClick={() => unRSVP(show)}>
+                      unRSVP
+                    </Button>
+                  </Card.Body>
+                </Card>
               </li>
             ))}
           </ul>
