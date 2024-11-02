@@ -1,27 +1,27 @@
 'use client';
 
 import PropTypes from 'prop-types';
-// import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import styles from '../styles/globals.css';
 import { useAuth } from '../utils/context/authContext';
-import { createReservation } from '../api/ShowData';
+import { createReservation, toggleRSVP } from '../api/ShowData';
 
 function ShowCards({ showObj }) {
   const { user } = useAuth();
-  // const [selectRsvp, setSelectRsvp] = useState(false);
+  const [selectRsvp, setSelectRsvp] = useState(false);
 
   const RSVP = (showId) => {
     const userId = user.id;
     createReservation(showId, userId);
-    console.warn(showId, userId);
+    setSelectRsvp(true);
   };
 
-  // const toggleselectRsvp = () => {
-  //   setSelectRsvp(!selectRsvp);
-  // };
+  useEffect(() => {
+    toggleRSVP(user.id, showObj.id).then(setSelectRsvp);
+  }, [user, showObj]);
 
   return (
     <div>
@@ -37,9 +37,13 @@ function ShowCards({ showObj }) {
             <Button variant="outline-dark" className="me-2">
               Detail
             </Button>
-            <Button variant="outline-light" onClick={() => RSVP(showObj.id)}>
-              RSVP
-            </Button>
+            {selectRsvp ? (
+              'spot reserved'
+            ) : (
+              <Button variant="outline-light" onClick={() => RSVP(showObj.id)}>
+                RSVP
+              </Button>
+            )}
           </div>
         </Card.Body>
       </Card>
