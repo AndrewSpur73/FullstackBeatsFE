@@ -88,5 +88,59 @@ const getUserHostedShows = (HostId) =>
       .catch(reject);
   });
 
-export { getAllShows, createNewShow, updateShow, getSingleShow, deleteSingleShow, getUserHostedShows };
-// test
+// shows to attend
+const showsToAttend = (userId) =>
+  new Promise((resolve, reject) => {
+    fetch(`${endpoint}/shows/attend/${userId}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => resolve(data))
+      .catch(reject);
+  });
+
+// unRSVP to shows
+const removeReservation = (userId, showId) =>
+  new Promise((resolve, reject) => {
+    fetch(`${endpoint}/shows/attend/${userId}/${showId}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => resolve(data))
+      .catch(reject);
+  });
+
+// RSVP to a show
+const createReservation = (showId, userId) =>
+  new Promise((resolve, reject) => {
+    fetch(`${endpoint}/shows/attend?showId=${showId}&userId=${userId}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => resolve(data))
+      .catch(reject);
+  });
+
+const toggleRSVP = (userId, showId) =>
+  new Promise((resolve, reject) => {
+    fetch(`${endpoint}/shows/${userId}/reserved/${showId}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => resolve(data))
+      .catch(reject);
+  });
+
+export { getAllShows, createNewShow, updateShow, getSingleShow, deleteSingleShow, getUserHostedShows, showsToAttend, removeReservation, createReservation, toggleRSVP };
