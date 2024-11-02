@@ -130,4 +130,17 @@ const createReservation = (showId, userId) =>
       .catch(reject);
   });
 
-export { getAllShows, createNewShow, updateShow, getSingleShow, deleteSingleShow, getUserHostedShows, showsToAttend, removeReservation, createReservation };
+const toggleRSVP = (userId, showId) =>
+  new Promise((resolve, reject) => {
+    fetch(`${endpoint}/shows/${userId}/reserved/${showId}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => resolve(data))
+      .catch(reject);
+  });
+
+export { getAllShows, createNewShow, updateShow, getSingleShow, deleteSingleShow, getUserHostedShows, showsToAttend, removeReservation, createReservation, toggleRSVP };
