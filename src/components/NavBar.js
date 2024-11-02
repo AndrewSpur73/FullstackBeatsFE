@@ -1,7 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
 import Link from 'next/link';
-import { Navbar, Container, Nav, Button, Dropdown, Form, FormControl } from 'react-bootstrap';
+import { Navbar, Container, Nav, Dropdown } from 'react-bootstrap';
 import { signOut } from '../utils/auth';
 
 export default function NavBar() {
@@ -14,10 +13,10 @@ export default function NavBar() {
           </Navbar.Brand>
         </Link>
 
-        <Form className="d-flex mx-auto" style={{ width: '50%' }}>
+        {/* <Form className="d-flex mx-auto" style={{ width: '50%' }}>
           <FormControl type="search" placeholder="Search" className="me-2" aria-label="Search" />
-          <Button variant="outline-light">Search</Button>
-        </Form>
+          <Button type='submit' variant="outline-light">Search</Button>
+        </Form> */}
 
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">

@@ -138,7 +138,7 @@ const toggleRSVP = (userId, showId) =>
         'Content-Type': 'application/json',
       },
     })
-      .then((response) => response.json())
+      .then((response) => response.json().catch(() => ({})))
       .then((data) => resolve(data))
       .catch(reject);
   });
