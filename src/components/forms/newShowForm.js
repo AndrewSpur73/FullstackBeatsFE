@@ -16,7 +16,7 @@ const initialState = {
   hostId: 0,
   image: '',
   name: '',
-  airDate: '',
+  airDateFormatted: '',
   rsvps: 0,
   description: '',
   categoryId: 0,
@@ -70,7 +70,7 @@ function NewShowForm({ newShowObj }) {
 
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Show Air Date</Form.Label>
-              <Form.Control type="date" name="airDate" value={formData.airDate || ''} required placeholder="Enter Show Air Date" onChange={handleChange} />
+              <Form.Control type="date" name="airDateFormatted" value={formData.airDateFormatted || ''} required placeholder="Enter Show Air Date" onChange={handleChange} />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicAbout">
@@ -105,7 +105,7 @@ NewShowForm.propTypes = {
     id: PropTypes.number,
     name: PropTypes.string,
     description: PropTypes.string,
-    airDate: PropTypes.string,
+    airDateFormatted: PropTypes.string,
     categories: PropTypes.shape({
       id: PropTypes.number,
       name: PropTypes.string,

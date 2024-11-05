@@ -30,7 +30,7 @@ function ShowCards({ showObj }) {
         <Card.Body className="text-center">
           <Card.Title>{showObj.name}</Card.Title>
           <ListGroup variant="flush">
-            <ListGroup.Item style={{ backgroundColor: 'rgb(247, 157, 17)' }}>{showObj.airDate}</ListGroup.Item>
+            <ListGroup.Item style={{ backgroundColor: 'rgb(247, 157, 17)' }}>{showObj.airDateFormatted}</ListGroup.Item>
             <ListGroup.Item style={{ backgroundColor: 'rgb(247, 157, 17)' }}>{showObj.description}</ListGroup.Item>
           </ListGroup>
           <div className="d-flex justify-content-center mt-2">
@@ -53,7 +53,7 @@ function ShowCards({ showObj }) {
 
 ShowCards.propTypes = {
   showObj: PropTypes.shape({
-    airDate: PropTypes.string,
+    airDateFormatted: PropTypes.string,
     id: PropTypes.number,
     category: PropTypes.shape({
       name: PropTypes.string,
