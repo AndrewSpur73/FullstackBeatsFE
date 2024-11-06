@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
@@ -26,7 +27,7 @@ function ShowCards({ showObj }) {
   return (
     <div>
       <Card className={styles.card}>
-        <Card.Img variant="top" className="cardImage" src={showObj.image} />
+        <Card.Img variant="top" className="cardImage" src={showObj.image} alt={showObj.image} />
         <Card.Body className="text-center">
           <Card.Title>{showObj.name}</Card.Title>
           <ListGroup variant="flush">
@@ -34,11 +35,13 @@ function ShowCards({ showObj }) {
             <ListGroup.Item style={{ backgroundColor: 'rgb(247, 157, 17)' }}>{showObj.description}</ListGroup.Item>
           </ListGroup>
           <div className="d-flex justify-content-center mt-2">
-            <Button variant="outline-dark" className="me-2">
-              Detail
-            </Button>
+            <Link passHref href={`/shows/details/${showObj.id}`}>
+              <Button variant="outline-dark" className="me-2">
+                Detail
+              </Button>
+            </Link>
             {selectRsvp ? (
-              'spot reserved'
+              <span className="text-success">Spot Reserved</span>
             ) : (
               <Button variant="outline-light" onClick={() => RSVP(showObj.id)}>
                 RSVP
@@ -63,4 +66,5 @@ ShowCards.propTypes = {
     image: PropTypes.string,
   }).isRequired,
 };
+
 export default ShowCards;
