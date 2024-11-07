@@ -24,18 +24,15 @@ function Home() {
 
   return (
     <Container fluid style={{ paddingTop: '20px' }}>
-      <Row>
-        {/* Left Side - Profile Card */}
-        <Col xs={12} md={6}>
+      <Row className="gx-3">
+        {/* Left Side - Profile Card, takes up a smaller portion of the screen */}
+        <Col xs={12} md={3} style={{ display: 'flex', justifyContent: 'flex-start' }}>
           {userData ? <ProfileCard userData={userData} /> : <p>No user data available.</p>}
         </Col>
 
-        {/* Right Side - WatchCard and HostCard */}
-        <Col xs={12} md={6}>
-          {/* WatchCard */}
+        {/* Centered Right Side - WatchCard and HostCard, takes up the rest of the space */}
+        <Col xs={12} md={9} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <WatchCard />
-
-          {/* HostCard */}
           <HostCard />
         </Col>
       </Row>
@@ -44,4 +41,3 @@ function Home() {
 }
 
 export default Home;
-// test

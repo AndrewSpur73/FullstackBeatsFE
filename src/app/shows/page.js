@@ -28,7 +28,7 @@ export default function BrowseShows() {
   return (
     <>
       <div className="search-bar-container">
-        <input style={{ width: '600px', display: 'block', margin: '0 auto' }} type="search" placeholder="Search for shows" onChange={handleChange} className="search-input" />
+        <input style={{ width: '600px', display: 'block', margin: '0 auto', borderRadius: '7px', marginTop: '15px' }} type="search" placeholder="Search for shows" onChange={handleChange} className="search-input" />
       </div>
       <div className="d-flex justify-content-center mt-2">
         <Link href="/shows/new" passHref>

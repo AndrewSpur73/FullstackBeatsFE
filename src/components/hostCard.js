@@ -30,7 +30,7 @@ function HostCard() {
 
   return (
     <Container style={{ marginTop: '20px', display: 'flex', justifyContent: 'center' }}>
-      <Card style={{ width: '100%', maxWidth: '600px', backgroundColor: 'rgb(247, 157, 17)', border: '2px solid rgb(251, 71, 154)' }}>
+      <Card style={{ width: '100%', maxWidth: '1000px', backgroundColor: 'rgb(247, 157, 17)', border: '2px solid rgb(251, 71, 154)' }}>
         <Card.Body>
           <Card.Title>Your Hosted Shows</Card.Title>
           {hostedShows.length > 0 ? (

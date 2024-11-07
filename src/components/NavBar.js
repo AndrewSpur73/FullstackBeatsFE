@@ -1,41 +1,44 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import Link from 'next/link';
-import { Navbar, Container, Nav, Dropdown } from 'react-bootstrap';
+import { Navbar, Container, Nav, Button } from 'react-bootstrap';
 import { signOut } from '../utils/auth';
 
 export default function NavBar() {
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" style={{ padding: '5px 0', paddingBottom: '5px' }}>
       <Container>
         <Link passHref href="/">
           <Navbar.Brand>
-            <img src="/images/image-removebg-preview (4).png" alt="FSBeats Logo" style={{ height: '40px', width: 'auto' }} />
+            <img
+              src="/images/image-removebg-preview (4).png"
+              alt="FSBeats Logo"
+              style={{ height: '80px', width: 'auto' }} // Increase the logo size here
+            />
           </Navbar.Brand>
         </Link>
-
-        {/* <Form className="d-flex mx-auto" style={{ width: '50%' }}>
-          <FormControl type="search" placeholder="Search" className="me-2" aria-label="Search" />
-          <Button type='submit' variant="outline-light">Search</Button>
-        </Form> */}
-
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="ms-auto">
-            <Dropdown align="end">
-              <Dropdown.Toggle variant="secondary" id="dropdown-basic">
-                Menu
-              </Dropdown.Toggle>
-
-              <Dropdown.Menu>
-                <Dropdown.Item as={Link} href="/shows">
-                  Browse Shows
-                </Dropdown.Item>
-                <Dropdown.Item onClick={signOut}>Signout</Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
+          <Nav className="me-auto" style={{ fontSize: '1.25rem', display: 'flex', alignItems: 'center' }}>
+            {/* Browse Shows Button */}
+            <Link passHref href="/shows">
+              <Button variant="outline-warning" style={{ marginLeft: '15px', marginRight: '20px', height: '50px' }}>
+                Browse Shows
+              </Button>
+            </Link>
+            {/* Create New Show Button */}
+            <Link passHref href="/shows/new">
+              <Button variant="outline-warning" style={{ marginRight: 'auto', marginLeft: '10px', height: '50px' }}>
+                Create New Show
+              </Button>
+            </Link>
           </Nav>
+          {/* Signout Button */}
+          <Button variant="outline-warning" onClick={signOut} style={{ height: '50px' }}>
+            Signout
+          </Button>
         </Navbar.Collapse>
       </Container>
     </Navbar>
   );
-} // test
+}

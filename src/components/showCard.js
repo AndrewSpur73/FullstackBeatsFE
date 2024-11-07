@@ -32,7 +32,8 @@ function ShowCards({ showObj }) {
           <Card.Title>{showObj.name}</Card.Title>
           <ListGroup variant="flush">
             <ListGroup.Item style={{ backgroundColor: 'rgb(247, 157, 17)' }}>{showObj.airDateFormatted}</ListGroup.Item>
-            <ListGroup.Item style={{ backgroundColor: 'rgb(247, 157, 17)' }}>{showObj.description}</ListGroup.Item>
+            <ListGroup.Item style={{ fontSize: '15px', backgroundColor: 'rgb(247, 157, 17)' }}>{showObj.description}</ListGroup.Item>
+            <ListGroup.Item style={{ backgroundColor: 'rgb(247, 157, 17)' }}>{showObj.category.name}</ListGroup.Item>
           </ListGroup>
           <div className="d-flex justify-content-center mt-2">
             <Link passHref href={`/shows/details/${showObj.id}`}>

@@ -70,7 +70,7 @@ function NewShowForm({ newShowObj }) {
 
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Show Air Date</Form.Label>
-              <Form.Control type="date" name="airDateFormatted" value={formData.airDateFormatted || ''} required placeholder="Enter Show Air Date" onChange={handleChange} />
+              <Form.Control type="date" name="airDate" value={formData.airDate || ''} required placeholder="Enter Show Air Date" onChange={handleChange} />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicAbout">
