@@ -111,8 +111,17 @@ const removeReservation = (userId, showId) =>
         'Content-Type': 'application/json',
       },
     })
-      .then((response) => response.json())
-      .then((data) => resolve(data))
+      .then(async (res) => {
+        let data;
+        console.log('status:', res);
+        if (res.status === 204) {
+          resolve({});
+        } else {
+          data = await res.json();
+          // console.log('data:', data);
+          resolve(data);
+        }
+      })
       .catch(reject);
   });
 

@@ -11,7 +11,6 @@ function DetailsCard({ showId }) {
   const [selectRsvp, setSelectRsvp] = useState(false);
 
   useEffect(() => {
-    // Fetch show data by ID
     getSingleShow(showId).then(setShowObj).catch(console.error);
   }, [showId]);
 
@@ -39,6 +38,9 @@ function DetailsCard({ showId }) {
           <div className={styles.infoList}>
             <div className={styles.infoItem}>
               <strong>Air Date:</strong> {showObj.airDateFormatted}
+            </div>
+            <div className={styles.infoItem}>
+              <strong>Category:</strong> {showObj.category.name}
             </div>
             <div className={styles.infoItem}>
               <strong>Description:</strong> {showObj.description}

@@ -5,7 +5,7 @@ import SignIn from '@/components/SignIn';
 import NavBar from '@/components/NavBar';
 import { useEffect, useState } from 'react';
 import RegisterForm from '../../components/forms/RegisterForm';
-import { getSingleUser } from '../../api/userData';
+import { checkUser } from '../auth';
 
 function ViewDirectorBasedOnUserAuthStatus({ children }) {
   const [databaseUser, setDatabaseUser] = useState({});
@@ -14,7 +14,7 @@ function ViewDirectorBasedOnUserAuthStatus({ children }) {
 
   useEffect(() => {
     if (user && user.uid) {
-      getSingleUser(user.uid).then(setDatabaseUser);
+      checkUser(user.uid).then(setDatabaseUser);
     }
   }, [user]);
 
