@@ -40,7 +40,7 @@ function NewCategoryForm() {
     <Container fluid className="d-flex vh-100 justify-content-center align-items-center">
       <Row className="w-100 justify-content-center">
         <Col xs={12} md={6} lg={4} className="fixed-width">
-          <Form onSubmit={handleSubmit}>
+          <Form onSubmit={handleSubmit} style={{ color: 'white' }}>
             <Form.Group className="mb-3" controlId="formBasicUserName">
               <Form.Label>Category Name</Form.Label>
               <Form.Control type="text" name="name" required placeholder="Enter Category Name" onChange={handleChange} />

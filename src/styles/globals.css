@@ -1,8 +1,18 @@
 body {
-  background: rgb(40, 23, 65);
-  color: white;
-  
+  background-image: url(../styles/images/blur.jpg), url(../styles/images/blur.jpg);
+  /* animation: backgroundScroll 10s linear infinite; */
 }
+
+@keyframes backgroundScroll {
+  from {
+    background-position: 0 0; 
+  }
+  to {
+    background-position: 100% 0; 
+}
+}
+
+
 
 .card {
   background-color: rgb(247, 157, 17);
@@ -39,6 +49,7 @@ body {
   height: 100vh; /* Full viewport height for vertical centering */
   padding: 20px;
   background-color: #f0f0f0; /* Optional background color */
+  color: white;
 }
 
 .detailsCard {

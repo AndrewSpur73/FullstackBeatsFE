@@ -23,7 +23,7 @@ function Home() {
   }, [user]);
 
   return (
-    <Container fluid style={{ paddingTop: '20px' }}>
+    <Container className="backgroundImage" fluid style={{ paddingTop: '20px' }}>
       <Row className="gx-3">
         {/* Left Side - Profile Card, takes up a smaller portion of the screen */}
         <Col xs={12} md={3} style={{ display: 'flex', justifyContent: 'flex-start' }}>
