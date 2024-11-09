@@ -57,14 +57,14 @@ function NewShowForm({ newShowObj }) {
     <Container fluid className="d-flex vh-100 justify-content-center align-items-center">
       <Row className="w-100 justify-content-center">
         <Col xs={12} md={6} lg={4} className="fixed-width">
-          <Form onSubmit={handleSubmit}>
+          <Form onSubmit={handleSubmit} style={{ color: 'white' }}>
             <Form.Group className="mb-3" controlId="formBasicImage">
               <Form.Label>Show Image</Form.Label>
               <Form.Control type="url" name="image" value={formData.image || ''} required placeholder="Enter an image URL" onChange={handleChange} />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicUserName">
-              <Form.Label>Show Name</Form.Label>
+              <Form.Label style={{ color: 'white' }}>Show Name</Form.Label>
               <Form.Control type="text" name="name" value={formData.name || ''} required placeholder="Enter Show Name" onChange={handleChange} />
             </Form.Group>
 

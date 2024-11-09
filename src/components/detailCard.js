@@ -28,7 +28,7 @@ function DetailsCard({ showId }) {
   if (!showObj) return <p>Loading...</p>;
 
   return (
-    <div className={styles.detailsContainer}>
+    <div style={{ color: 'white' }} className={styles.detailsContainer}>
       <div className={`${styles.card} ${styles.detailsCard}`}>
         <div className={styles.centerContainer} style={{ justifyContent: 'center', alignContent: 'center', display: 'flex', borderRadius: '8px' }}>
           <img src={showObj.image} alt={showObj.name} style={{ width: '700px', height: '600px', objectFit: 'contain', borderRadius: '8px' }} />

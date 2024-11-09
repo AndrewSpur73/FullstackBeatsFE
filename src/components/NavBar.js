@@ -22,14 +22,19 @@ export default function NavBar() {
           <Nav className="me-auto" style={{ fontSize: '1.25rem', display: 'flex', alignItems: 'center' }}>
             {/* Browse Shows Button */}
             <Link passHref href="/shows">
-              <Button variant="outline-warning" style={{ marginLeft: '15px', marginRight: '20px', height: '50px' }}>
+              <Button variant="outline-warning" style={{ marginLeft: '15px', marginRight: '30px', height: '50px' }}>
                 Browse Shows
               </Button>
             </Link>
             {/* Create New Show Button */}
             <Link passHref href="/shows/new">
-              <Button variant="outline-warning" style={{ marginRight: 'auto', marginLeft: '10px', height: '50px' }}>
+              <Button variant="outline-warning" style={{ marginLeft: '15px', marginRight: '30px', height: '50px' }}>
                 Create New Show
+              </Button>
+            </Link>
+            <Link passHref href="/categories/new">
+              <Button variant="outline-warning" style={{ marginLeft: '15px', marginRight: '30px', height: '50px' }}>
+                Create Category
               </Button>
             </Link>
           </Nav>

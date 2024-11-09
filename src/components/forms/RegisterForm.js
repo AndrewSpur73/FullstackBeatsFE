@@ -34,7 +34,7 @@ function RegisterForm() {
     <Container fluid className="d-flex vh-100 justify-content-center align-items-center">
       <Row className="w-100 justify-content-center">
         <Col xs={12} md={6} lg={4} className="fixed-width">
-          <Form onSubmit={handleSubmit}>
+          <Form onSubmit={handleSubmit} style={{ color: 'white' }}>
             <Form.Group className="mb-3" controlId="formBasicUserName">
               <Form.Label>Username</Form.Label>
               <Form.Control type="text" name="userName" required placeholder="Enter A Username" onChange={({ target }) => setFormData((prev) => ({ ...prev, [target.name]: target.value }))} />
@@ -44,8 +44,8 @@ function RegisterForm() {
               <Form.Control type="email" name="email" required placeholder="Enter your Email" onChange={({ target }) => setFormData((prev) => ({ ...prev, [target.name]: target.value }))} />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicAbout">
-              <Form.Label>Bio</Form.Label>
-              <Form.Control type="text" name="about" required placeholder="Enter a Bio" onChange={({ target }) => setFormData((prev) => ({ ...prev, [target.name]: target.value }))} />
+              <Form.Label style={{ color: 'white' }}>Bio</Form.Label>
+              <Form.Control as="textarea" rows={3} type="text" name="about" required placeholder="Enter a Bio" onChange={({ target }) => setFormData((prev) => ({ ...prev, [target.name]: target.value }))} />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicImage">
               <Form.Label>Profile Image</Form.Label>
