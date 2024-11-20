@@ -8,7 +8,9 @@
 </p>
 
 <p align="center">
-    <b>Simple description of what your project do or how to use it</b>
+ FullStack Beats provides the platform for people to host or watch concerts that they might not have seen otherwise.
+ FullStack Beats allows for users to see any created concerts, show support to the artists by reserving a spot for 
+ the virtual performance.   
 </p>
 
 <p align="center">
@@ -16,6 +18,9 @@
 </p>
 
 <h2 id="layout">🎨 Layout</h2>
+![image](https://github.com/user-attachments/assets/a14fc09e-231d-4708-a328-a4b969e3cf62)
+![image](https://github.com/user-attachments/assets/636f7d59-acb1-4ea7-a5bd-8fa038075fb8)
+![image](https://github.com/user-attachments/assets/fde0f065-f2e8-491e-99b9-c34f01f961a4)
 
 <p align="center">
     <img src="../.github/example.png" alt="Image Example" width="400px">
@@ -24,14 +29,15 @@
 
 <h2 id="technologies">💻 Technologies</h2>
 
-- list of all technologies you used
-- react
-- styled components
-- another example
+- Node JS
+- REACT
+- NextJS
+- Firebase/Google Authentication
+- Postgres
 
 <h2 id="started">🚀 Getting started</h2>
 
-Here you describe how to run your project locally
+App is run locally on http://localhost:3000
 
 <h3>Prerequisites</h3>
 
@@ -42,53 +48,28 @@ Here you list all prerequisites necessary for running your project. For example:
 
 <h3>Cloning</h3>
 
-How to clone your project
+Full Stack Beats app can be cloned at:
+https://github.com/AndrewSpur73/FullstackBeatsFE.git
 
 ```bash
-git clone your-project-url-in-github
+git clone https://github.com/AndrewSpur73/FullstackBeatsFE.git
 ```
 
 <h3>Starting</h3>
 
-How to start your project
+npm run dev
 
 ```bash
-cd project-name
-npm some-command-to-run
+cd FullstackBeatsFE
+npm run dev
 ```
 
 <h2 id="colab">🤝 Collaborators</h2>
 
 Special thank you for all people that contributed for this project.
 
-<table>
-  <tr>
-    <td align="center">
-      <a href="#">
-        <img src="https://avatars.githubusercontent.com/u/61896274?v=4" width="100px;" alt="Fernanda Kipper Profile Picture"/><br>
-        <sub>
-          <b>Fernanda Kipper</b>
-        </sub>
-      </a>
-    </td>
-    <td align="center">
-      <a href="#">
-        <img src="https://t.ctcdn.com.br/n7eZ74KAcU3iYwnQ89-ul9txVxc=/400x400/smart/filters:format(webp)/i490769.jpeg" width="100px;" alt="Elon Musk Picture"/><br>
-        <sub>
-          <b>Elon Musk</b>
-        </sub>
-      </a>
-    </td>
-    <td align="center">
-      <a href="#">
-        <img src="https://miro.medium.com/max/360/0*1SkS3mSorArvY9kS.jpg" width="100px;" alt="Foto do Steve Jobs"/><br>
-        <sub>
-          <b>Steve Jobs</b>
-        </sub>
-      </a>
-    </td>
-  </tr>
-</table>
+![image](https://github.com/user-attachments/assets/1aee81ab-74f8-45b7-838d-c5a8c9e1ef5c)
+
 
 <h2 id="contribute">📫 Contribute</h2>
 
