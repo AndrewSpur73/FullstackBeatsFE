@@ -1,106 +1,89 @@
-<h1 align="center" style="font-weight: bold;">Project name 💻</h1>
+# 🎶 **FullStackBeats** 🎶  
 
-<p align="center">
- <a href="#tech">Technologies</a> • 
- <a href="#started">Getting Started</a> • 
-  <a href="#colab">Collaborators</a> •
- <a href="#contribute">Contribute</a>
-</p>
+![App Screenshot](https://github.com/user-attachments/assets/48650fc7-4b0c-4e06-bbff-54cd61ae157f)
 
-<p align="center">
-    <b>Simple description of what your project do or how to use it</b>
-</p>
+Welcome to **FullStackBeats** — the ultimate platform for virtual events! Whether you're hosting a show or attending as a guest, we’ve got you covered. 🎤  
 
-<p align="center">
-     <a href="PROJECT__URL">📱 Visit this Project</a>
-</p>
+---
 
-<h2 id="layout">🎨 Layout</h2>
+## 🚀 **Overview**
 
-<p align="center">
-    <img src="../.github/example.png" alt="Image Example" width="400px">
-    <img src="../.github/example.png" alt="Image Example" width="400px">
-</p>
+**FullStackBeats** simplifies hosting and attending virtual events. Add your own events, associate them with your profile, and explore events created by others! Users can create, read, update, and delete events while categorizing them for easy organization.  
 
-<h2 id="technologies">💻 Technologies</h2>
+---
 
-- list of all technologies you used
-- react
-- styled components
-- another example
+## 🛠 **Technologies Used**  
 
-<h2 id="started">🚀 Getting started</h2>
+- **Frontend**: React, Next.js  
+- **Backend**: Firebase for authentication and data storage  
+- **Package Manager**: npm  
+- **Deployment**: Netlify  
 
-Here you describe how to run your project locally
+---
 
-<h3>Prerequisites</h3>
+## ✨ **App Features (MVP)**
 
-Here you list all prerequisites necessary for running your project. For example:
+✔️ **Events**  
+   - 🎵 **Create**: Add shows or concerts effortlessly.  
+   - 👁️ **Read**: Browse all events in an intuitive layout.  
+   - ✏️ **Update**: Edit event details as needed.  
+   - ❌ **Delete**: Remove events you no longer need.  
 
-- [NodeJS](https://github.com/)
-- [Git 2](https://github.com)
+✔️ **Categories**  
+   - 🎭 **Dropdown Selector**: Easily assign categories to events.  
+   - ➕ **Create**: Add categories for better organization.  
 
-<h3>Cloning</h3>
+---
 
-How to clone your project
+## 📸 **Screenshots**  
 
-```bash
-git clone your-project-url-in-github
-```
+![Screenshot 2024-11-27 at 1 56 13 PM](https://github.com/user-attachments/assets/80cd7e70-c3f7-4424-9488-bbf938c53f8f)  
+![App Screenshot](https://github.com/user-attachments/assets/31a04671-e082-4584-b05e-472b223bd5cf)  
 
-<h3>Starting</h3>
+---
 
-How to start your project
+## 🗂 **Project Board**  
 
-```bash
-cd project-name
-npm some-command-to-run
-```
+Follow our development journey: [GitHub Project Board](https://github.com/users/AndrewSpur73/projects/5)  
 
-<h2 id="colab">🤝 Collaborators</h2>
+---
 
-Special thank you for all people that contributed for this project.
+## 👥 **Target Users**  
 
-<table>
-  <tr>
-    <td align="center">
-      <a href="#">
-        <img src="https://avatars.githubusercontent.com/u/61896274?v=4" width="100px;" alt="Fernanda Kipper Profile Picture"/><br>
-        <sub>
-          <b>Fernanda Kipper</b>
-        </sub>
-      </a>
-    </td>
-    <td align="center">
-      <a href="#">
-        <img src="https://t.ctcdn.com.br/n7eZ74KAcU3iYwnQ89-ul9txVxc=/400x400/smart/filters:format(webp)/i490769.jpeg" width="100px;" alt="Elon Musk Picture"/><br>
-        <sub>
-          <b>Elon Musk</b>
-        </sub>
-      </a>
-    </td>
-    <td align="center">
-      <a href="#">
-        <img src="https://miro.medium.com/max/360/0*1SkS3mSorArvY9kS.jpg" width="100px;" alt="Foto do Steve Jobs"/><br>
-        <sub>
-          <b>Steve Jobs</b>
-        </sub>
-      </a>
-    </td>
-  </tr>
-</table>
+**FullStackBeats** is perfect for:  
+- 🎤 **Performers**: Artists and musicians who want to host their virtual events.  
+- 🎧 **Fans**: Viewers looking to enjoy curated virtual experiences.  
+- 📅 **Organizers**: Users who love categorizing and managing events.  
 
-<h2 id="contribute">📫 Contribute</h2>
+---
 
-Here you will explain how other developers can contribute to your project. For example, explaining how can create their branches, which patterns to follow and how to open an pull request
+## 🛠 **Getting Started**
 
-1. `git clone https://github.com/Fernanda-Kipper/text-editor.git`
-2. `git checkout -b feature/NAME`
-3. Follow commit patterns
-4. Open a Pull Request explaining the problem solved or feature made, if exists, append screenshot of visual modifications and wait for the review!
+To run this project locally, follow these steps:  
 
-<h3>Documentations that might help</h3>
+### 1. **Clone the Repository**  
 
-[📝 How to create a Pull Request](https://www.atlassian.com/br/git/tutorials/making-a-pull-request)
+Frontend:   
+`git clone https://github.com/AndrewSpur73/FullstackBeatsFE.git`
 
-[💾 Commit pattern](https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716)
+Backend:   
+`git clone https://github.com/AndrewSpur73/FullstackBeatsBE.git`
+
+### 2. **Install Dependencies**
+
+`cd FullstackBeatsFE`   
+`npm install`
+
+### 3. **See Backend Project for Install Instructions**
+https://github.com/AndrewSpur73/FullstackBeatsBE/blob/main/README.md
+
+### 4. **Run App**
+`npm run dev`
+
+---
+
+## 🛠 **Contributors**
+- Noah C Allen ([GitHub Profile](https://github.com/noahcallen))
+- Toren DeRamus ([GitHub Profile](https://github.com/tderamus))
+- Andrew Spurlock ([GitHub Profile](https://github.com/AndrewSpur73))
+- Derek Swann ([GitHub Profile](https://github.com/Mrthincrisp))
